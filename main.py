@@ -1,8 +1,16 @@
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from models import Task, TaskCreate, TaskUpdate
 from typing import List
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",    # If your frontend runs on port 3000 (e.g., React)
+    "http://localhost:5173",    # If your frontend runs on port 5173 (e.g., Vite)
+]
+
+app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=['*'], allow_headers=['*'])
 
 tasks : List[Task] = []
 next_task_id = 1
