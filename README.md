@@ -1,4 +1,4 @@
-# Note App Backend
+# Tasks App Backend
 
 This is the backend for a simple note/task management application, built with **FastAPI**. It provides a RESTful API for managing tasks, including creating, reading, updating, and deleting tasks. The backend is designed to work seamlessly with a React + Vite frontend (see the `frontend` directory).
 
@@ -84,7 +84,6 @@ uvicorn main:app --reload
 
 ## CORS & Frontend
 - CORS is enabled for `http://localhost:3000` and `http://localhost:5173` to support local frontend development.
-- The recommended frontend is in the `../frontend` directory (React + Vite).
 
 ## Notes
 - This backend uses in-memory storage; all data will be lost when the server restarts.
